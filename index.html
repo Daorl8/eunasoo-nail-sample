@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>으나수 네일 · eunasoo nail — 예약제 1인 프라이빗 네일 스튜디오</title>
+<meta name="description" content="으나수 네일(eunasoo nail). 손톱 상태를 먼저 보고 시작하는 예약제 1인 프라이빗 네일 스튜디오. 자연스러운 결과와 오래가는 유지력을 우선합니다.">
+<meta property="og:title" content="으나수 네일 · eunasoo nail">
+<meta property="og:description" content="손톱 상태를 먼저 보고 시작하는 예약제 1인 프라이빗 네일 스튜디오.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://eunasoo-nail-sample.lgt3232.workers.dev/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --paper:#F6F3EE; --paper-2:#EDE9E3; --line:#DCD6D0;
+  --ink:#171319; --ink-2:#46404A; --muted:#6E6672;
+  --plum:#693B84; --plum-dk:#562F6C; --plum-lt:#B98FD6;
+  --en:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  --kr:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,'Segoe UI','Malgun Gothic',Roboto,Arial,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+  --bar:56px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{color-scheme:light;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--kr);font-weight:400;line-height:1.7;
+  word-break:keep-all;overflow-wrap:break-word;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--plum);color:#fff}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--plum);outline-offset:3px}
+
+.wrap{max-width:1240px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.lab{font-family:var(--en);font-weight:400;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--plum)}
+.lab-m{color:var(--muted)}
+h2{font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:600;letter-spacing:-.02em;line-height:1.32}
+h3{font-size:1.06rem;font-weight:600;letter-spacing:-.01em}
+p{color:var(--ink-2)}
+.sec{padding:clamp(64px,9vw,124px) 0}
+.sec-head{max-width:640px;margin-bottom:clamp(30px,4vw,54px)}
+.sec-head h2{margin:12px 0 14px}
+.sec-head p{color:var(--muted)}
+.rule{height:1px;background:var(--line);border:0}
+
+/* 상단 바 */
+.top{position:fixed;top:0;left:0;right:0;height:var(--bar);z-index:60;background:rgba(246,243,238,.96);
+  border-bottom:1px solid var(--line);display:flex;align-items:center}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%}
+.brand{display:flex;align-items:center;gap:9px;min-width:0}
+.brand img{width:26px;height:auto}
+.brand b{font-weight:600;font-size:.98rem;letter-spacing:-.01em}
+.brand span{font-family:var(--en);font-size:.7rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+.topnav{display:none;gap:26px;font-family:var(--en);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.topnav a:hover{color:var(--plum)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--kr);
+  font-size:.92rem;font-weight:500;padding:12px 22px;border-radius:2px;border:1px solid transparent;transition:.22s}
+.btn-p{background:var(--plum);color:#fff}
+.btn-o{border-color:var(--ink);color:var(--ink)}
+.btn-sm{padding:9px 16px;font-size:.85rem}
+@media(hover:hover){.btn-p:hover{background:var(--plum-dk)}.btn-o:hover{background:var(--ink);color:var(--paper)}}
+
+/* 히어로 */
+.hero{display:grid;grid-template-columns:1fr;padding-top:var(--bar)}
+.hero-txt{padding:clamp(44px,7vw,80px) var(--pad) clamp(48px,7vw,72px);display:flex;flex-direction:column;justify-content:center}
+.hero-logo{width:clamp(112px,20vw,152px);margin-bottom:26px}
+.hero h1{font-size:clamp(2.05rem,6.2vw,3.35rem);font-weight:600;letter-spacing:-.035em;line-height:1.24;margin:16px 0 18px}
+.hero h1 em{font-style:normal;color:var(--plum)}
+.hero-sub{color:var(--muted);font-size:clamp(.96rem,1.6vw,1.05rem);max-width:30em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero-img{position:relative;background:var(--paper-2);aspect-ratio:4/5;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-tag{position:absolute;left:0;bottom:0;background:var(--paper);padding:12px 18px;
+  font-family:var(--en);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--plum)}
+
+/* 신뢰 3항목 */
+.marks{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2)}
+.marks .wrap{display:grid;grid-template-columns:1fr;gap:0}
+.mark{padding:26px 0;border-bottom:1px solid var(--line);min-width:0}
+.mark:last-child{border-bottom:0}
+.mark .n{font-family:var(--en);font-size:.72rem;letter-spacing:.2em;color:var(--plum)}
+.mark h3{margin:8px 0 5px}
+.mark p{font-size:.92rem;color:var(--muted)}
+
+/* 소개 */
+.about{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,56px);align-items:center}
+.about-img{aspect-ratio:4/5;overflow:hidden;background:var(--paper-2)}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-txt p{margin-top:16px}
+.sign{margin-top:26px;font-family:var(--en);font-size:.78rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+
+/* 메뉴/가격 */
+.menu-list{border-top:1px solid var(--ink)}
+.mrow{display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:baseline;
+  padding:20px 0;border-bottom:1px solid var(--line);min-width:0}
+.mrow .nm{font-weight:600;letter-spacing:-.01em}
+.mrow .ds{grid-column:1/-1;color:var(--muted);font-size:.9rem;margin-top:-6px}
+.mrow .pr{font-family:var(--en);font-size:1rem;color:var(--ink);white-space:nowrap}
+.mnote{margin-top:18px;font-size:.88rem;color:var(--muted)}
+
+/* 작업 갤러리 */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(8px,1.2vw,16px)}
+.gcell{aspect-ratio:3/4;overflow:hidden;background:var(--paper-2)}
+.gcell img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+@media(hover:hover){.gcell:hover img{transform:scale(1.045)}}
+
+/* 아카이브 밴드 */
+.band{position:relative;background:var(--ink);color:var(--paper);overflow:hidden}
+.band-img{position:relative;aspect-ratio:16/10;overflow:hidden}
+.band-img img{width:100%;height:100%;object-fit:cover;opacity:.72}
+.band-txt{padding:clamp(38px,6vw,72px) var(--pad)}
+.band-txt h2{color:var(--paper);margin:12px 0 14px}
+.band-txt p{color:#A79FAB;max-width:34em}
+.band .lab{color:var(--plum-lt)}
+
+/* 케어 */
+.care{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+.care li{list-style:none;padding:22px 0;border-bottom:1px solid var(--line);display:grid;
+  grid-template-columns:auto 1fr;gap:16px;align-items:start;min-width:0}
+.care .no{font-family:var(--en);font-size:.78rem;letter-spacing:.14em;color:var(--plum);padding-top:4px}
+.care p{font-size:.94rem;color:var(--muted);margin-top:4px}
+
+/* 정책 */
+.policy{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pol-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,44px)}
+.pol h3{margin-bottom:8px}
+.pol p{font-size:.94rem;color:var(--muted)}
+.pol .hl{color:var(--plum);font-weight:600}
+
+/* FAQ */
+details{border-bottom:1px solid var(--line)}
+details summary{cursor:pointer;list-style:none;padding:20px 34px 20px 0;position:relative;
+  font-weight:500;letter-spacing:-.01em}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:'+';position:absolute;right:4px;top:18px;font-family:var(--en);
+  font-size:1.2rem;color:var(--plum);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details .ans{padding:0 0 22px;color:var(--muted);font-size:.95rem}
+
+/* 방문 */
+.visit{display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,56px)}
+.info-row{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);min-width:0}
+.info-row dt{font-family:var(--en);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.info-row dd{font-size:.98rem}
+.info-row dd small{display:block;color:var(--muted);font-size:.86rem;margin-top:3px}
+.ch{display:grid;grid-template-columns:1fr;gap:10px;margin-top:24px}
+.ch a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;
+  border:1px solid var(--line);background:var(--paper);transition:.22s;min-width:0}
+.ch a b{font-weight:500}
+.ch a span{font-family:var(--en);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+@media(hover:hover){.ch a:hover{border-color:var(--plum);color:var(--plum)}}
+
+/* 푸터 */
+footer{background:var(--ink);color:var(--paper);padding:clamp(48px,6vw,80px) 0 calc(30px + var(--bar))}
+footer .fbrand{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+footer .fbrand img{width:38px}
+footer .fbrand b{font-size:1.05rem;font-weight:600}
+footer p{color:#A79FAB;font-size:.9rem}
+footer .fl{display:flex;flex-wrap:wrap;gap:18px;margin:22px 0 26px;font-family:var(--en);
+  font-size:.76rem;letter-spacing:.16em;text-transform:uppercase}
+footer .fl a{color:var(--plum-lt)}
+footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:#8A8390}
+
+/* 모바일 퀵바 */
+.quick{position:fixed;left:0;right:0;bottom:0;z-index:70;display:grid;grid-template-columns:1fr 1fr;
+  background:var(--paper);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.quick a{padding:15px 8px;text-align:center;font-size:.92rem;font-weight:500}
+.quick a+a{background:var(--plum);color:#fff}
+
+@media (min-width:900px){
+  :root{--bar:66px}
+  .topnav{display:flex}
+  .hero{grid-template-columns:minmax(0,46fr) minmax(0,54fr);min-height:100vh;min-height:100svh}
+  .hero-img{aspect-ratio:auto;height:100%}
+  .marks .wrap{grid-template-columns:repeat(3,1fr);gap:44px}
+  .mark{border-bottom:0;padding:34px 0}
+  .about{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
+  .about.rev{grid-template-columns:minmax(0,6fr) minmax(0,5fr)}
+  .grid{grid-template-columns:repeat(4,1fr)}
+  .band{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+  .band-img{aspect-ratio:auto;height:100%;min-height:420px}
+  .care{grid-template-columns:repeat(2,1fr);column-gap:48px}
+  .pol-grid{grid-template-columns:repeat(3,1fr)}
+  .visit{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .ch{grid-template-columns:repeat(2,1fr)}
+  .quick{display:none}
+  footer{padding-bottom:40px}
+}
+@media (min-width:1200px){ .grid{gap:16px} }
+
+/* 데스크톱 전용 리빌 — 모바일/인앱 웹뷰는 항상 보이게 */
+@media (min-width:900px){
+  .rv-on{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+  .rv-on.in{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .rv-on{opacity:1!important;transform:none!important}
+  .gcell img{transition:none}
+}
+</style>
+<noscript><style>.rv-on{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="으나수 네일 홈">
+      <img src="logo-mark.png" alt="" width="26">
+      <b>으나수 네일</b>
+      <span aria-hidden="true">eunasoo</span>
+    </a>
+    <nav class="topnav" aria-label="주요 메뉴">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#works">Works</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-p btn-sm" href="#visit">예약 문의</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- 히어로 -->
+  <section class="hero">
+    <div class="hero-txt">
+      <img class="hero-logo" src="logo.png" alt="으나수 네일 eunasoo nail 로고">
+      <span class="lab">Private nail studio</span>
+      <h1>손톱의 상태를 먼저 보고<br><em>디자인은 그 다음</em>입니다.</h1>
+      <p class="hero-sub">한 분씩만 맞이하는 예약제 1인 스튜디오. 유행보다 오래 두고 볼 수 있는 결과, 그리고 유지력을 우선합니다.</p>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="#visit">예약 문의하기</a>
+        <a class="btn btn-o" href="#works">작업 보기</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="hero.jpg" alt="펄이 은은하게 도는 뉴트럴 톤 젤네일 시술 결과" fetchpriority="high">
+      <span class="hero-tag" aria-hidden="true">Fingertip care, quietly</span>
+    </div>
+  </section>
+
+  <!-- 신뢰 3항목 -->
+  <section class="marks">
+    <div class="wrap">
+      <div class="mark">
+        <span class="n">01</span>
+        <h3>완전 예약제 · 1인 응대</h3>
+        <p>같은 시간에 다른 손님을 받지 않습니다. 대기 없이, 처음부터 끝까지 한 사람이 맡습니다.</p>
+      </div>
+      <div class="mark">
+        <span class="n">02</span>
+        <h3>상태 확인 후 시작</h3>
+        <p>손톱과 큐티클 상태를 먼저 보고, 필요하면 디자인보다 케어를 먼저 권해 드립니다.</p>
+      </div>
+      <div class="mark">
+        <span class="n">03</span>
+        <h3>유지력 우선 시공</h3>
+        <p>들뜸이 생기기 쉬운 부위를 감안해 두께와 마감을 조절합니다. 예뻐 보이는 것만큼 오래가는 것이 중요합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 소개 -->
+  <section class="sec" id="about">
+    <div class="wrap">
+      <div class="about rv-on">
+        <div class="about-img"><img src="band.jpg" alt="차분한 톤으로 마감한 젤네일 작업" loading="lazy"></div>
+        <div class="about-txt">
+          <span class="lab">About</span>
+          <h2>조용한 공간에서,<br>손끝만 보는 시간</h2>
+          <p>으나수 네일은 예약된 한 분만을 위해 문을 여는 작은 스튜디오입니다. 시술 중 다른 손님이 오가지 않기 때문에 원하는 결의 두께, 길이, 색의 채도까지 충분히 이야기하고 시작할 수 있습니다.</p>
+          <p>화려한 것보다 손을 오래 편하게 쓰는 쪽을 먼저 봅니다. 손톱이 얇아져 있거나 들뜸이 반복되고 있다면 그날은 디자인을 줄이고 케어에 시간을 더 쓰기도 합니다. 결과적으로 다음 시술이 편해지기 때문입니다.</p>
+          <p class="sign">eunasoo nail · by appointment only</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 메뉴 -->
+  <section class="sec" id="menu" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="lab">Menu</span>
+        <h2>시술 안내</h2>
+        <p>길이·아트 난이도에 따라 금액이 달라질 수 있어, 예약 시 원하시는 이미지를 보내 주시면 정확히 안내해 드립니다.</p>
+      </div>
+      <div class="menu-list">
+        <div class="mrow"><span class="nm">원컬러 / 젤</span><span class="pr">45,000원~</span>
+          <span class="ds">베이스 케어 포함. 단색·글리터·시럽 등 단일 톤 마감.</span></div>
+        <div class="mrow"><span class="nm">그라데이션 · 프렌치</span><span class="pr">55,000원~</span>
+          <span class="ds">자연스러운 결 표현 위주. 자라난 티가 덜 나는 구성.</span></div>
+        <div class="mrow"><span class="nm">디자인 아트</span><span class="pr">65,000원~</span>
+          <span class="ds">부분 아트·스톤·미러 등. 난이도에 따라 상담 후 결정.</span></div>
+        <div class="mrow"><span class="nm">연장 (팁 / 젤)</span><span class="pr">80,000원~</span>
+          <span class="ds">길이와 형태를 함께 잡습니다. 유지 기간 안내 포함.</span></div>
+        <div class="mrow"><span class="nm">케어 / 제거</span><span class="pr">15,000원~</span>
+          <span class="ds">타 샵 시술 제거는 상태에 따라 추가될 수 있습니다.</span></div>
+      </div>
+      <p class="mnote">· 표시 금액은 기본가이며 손톱 길이·아트 범위에 따라 변동됩니다. · 자세한 금액은 예약 문의 시 안내해 드립니다.</p>
+    </div>
+  </section>
+
+  <!-- 작업 -->
+  <section class="sec" id="works">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="lab">Works</span>
+        <h2>작업 기록</h2>
+        <p>실제 시술한 결과를 그대로 올립니다. 마음에 드는 사진이 있으면 번호 대신 이미지를 그대로 보내 주세요.</p>
+      </div>
+      <div class="grid rv-on">
+        <div class="gcell"><img src="work-01.jpg" alt="누드 핑크 톤 롱 젤네일" loading="lazy"></div>
+        <div class="gcell"><img src="work-02.jpg" alt="그레이 퍼플 크롬 젤네일" loading="lazy"></div>
+        <div class="gcell"><img src="work-03.jpg" alt="블루 그레이 벨벳 젤네일" loading="lazy"></div>
+        <div class="gcell"><img src="work-04.jpg" alt="세이지 그린 크롬 젤네일" loading="lazy"></div>
+        <div class="gcell"><img src="work-05.jpg" alt="펄 화이트 글리터 포인트 네일" loading="lazy"></div>
+        <div class="gcell"><img src="work-06.jpg" alt="누드 베이스에 미세 글리터 포인트" loading="lazy"></div>
+        <div class="gcell"><img src="work-07.jpg" alt="실버 글리터 그라데이션 네일" loading="lazy"></div>
+        <div class="gcell"><img src="work-08.jpg" alt="화이트 펄 포인트 아트 네일" loading="lazy"></div>
+        <div class="gcell"><img src="work-09.jpg" alt="누드 톤 스타 포인트 아트" loading="lazy"></div>
+        <div class="gcell"><img src="work-10.jpg" alt="은은한 반짝임의 뉴트럴 네일" loading="lazy"></div>
+        <div class="gcell"><img src="work-11.jpg" alt="차분한 톤의 프렌치 라인 네일" loading="lazy"></div>
+        <div class="gcell"><img src="work-12.jpg" alt="화이트 플라워 포인트 젤네일" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 아카이브 밴드 -->
+  <section class="band">
+    <div class="band-img"><img src="archive.jpg" alt="스튜디오에 준비된 컬러 샘플 팁 진열" loading="lazy"></div>
+    <div class="band-txt">
+      <span class="lab">Archive</span>
+      <h2>고르기 어려우면,<br>손에 올려 보고 정합니다</h2>
+      <p>사진으로 본 색은 조명과 피부 톤에 따라 다르게 보입니다. 스튜디오에 직접 만든 컬러 팁을 두고 있어, 손에 올려 비교한 뒤 결정하실 수 있습니다. 결정이 어려우실 때는 평소 자주 입는 옷 색을 말씀해 주세요.</p>
+    </div>
+  </section>
+
+  <!-- 케어 -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="lab">Care</span>
+        <h2>시술 후 안내</h2>
+        <p>오래 예쁘게 유지하는 방법은 대단하지 않습니다. 아래 네 가지만 지켜도 유지 기간이 눈에 띄게 달라집니다.</p>
+      </div>
+      <ul class="care">
+        <li><span class="no">01</span><div><h3>당일 뜨거운 물은 피해 주세요</h3><p>시술 직후 12시간 정도는 사우나·설거지 등 장시간 온수 접촉을 피하는 편이 좋습니다.</p></div></li>
+        <li><span class="no">02</span><div><h3>손톱을 도구로 쓰지 않기</h3><p>캔·택배 상자를 손톱으로 여는 습관이 들뜸의 가장 큰 원인입니다.</p></div></li>
+        <li><span class="no">03</span><div><h3>큐티클 오일은 매일 한 번</h3><p>손톱 주변이 마르면 갈라지기 쉽습니다. 자기 전 한 번이면 충분합니다.</p></div></li>
+        <li><span class="no">04</span><div><h3>들뜨면 그대로 두고 연락 주세요</h3><p>직접 떼면 손톱 표면이 함께 상합니다. 시술 후 7일 이내 들뜸은 무상으로 봐 드립니다.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 예약 정책 -->
+  <section class="sec policy">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="lab">Notice</span>
+        <h2>예약 전 확인해 주세요</h2>
+      </div>
+      <div class="pol-grid">
+        <div class="pol"><h3>예약금</h3><p>1인 스튜디오 특성상 <span class="hl">예약금 10,000원</span>을 받고 있습니다. 시술 금액에서 차감됩니다.</p></div>
+        <div class="pol"><h3>변경 · 취소</h3><p>예약일 <span class="hl">전날까지</span> 연락 주시면 변경·환불이 가능합니다. 당일 취소는 예약금이 차감됩니다.</p></div>
+        <div class="pol"><h3>지각 · 노쇼</h3><p>15분 이상 늦어지면 예정한 디자인이 어려울 수 있습니다. 미리 한 번만 알려 주세요.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="lab">FAQ</span>
+        <h2>자주 묻는 질문</h2>
+      </div>
+      <div>
+        <details><summary>시술 시간은 얼마나 걸리나요?</summary><div class="ans">원컬러는 약 1시간, 아트나 연장이 들어가면 2시간 안팎입니다. 제거가 필요하면 30분 정도 더 잡아 주세요.</div></details>
+        <details><summary>다른 곳에서 한 네일이 남아 있어도 되나요?</summary><div class="ans">가능합니다. 예약 시 미리 말씀해 주시면 제거 시간을 함께 잡아 둡니다. 상태에 따라 제거 비용이 추가될 수 있습니다.</div></details>
+        <details><summary>손톱이 얇고 자주 부러지는데 받을 수 있나요?</summary><div class="ans">받으실 수 있습니다. 다만 그날은 두께를 얇게 가져가거나 케어 위주로 진행을 권해 드릴 수 있습니다. 상태를 보고 함께 정합니다.</div></details>
+        <details><summary>원하는 디자인 사진을 보내도 되나요?</summary><div class="ans">환영합니다. 사진을 보내 주시면 손톱 길이와 형태에 맞게 조정한 안을 미리 말씀드립니다.</div></details>
+        <details><summary>주차가 되나요?</summary><div class="ans">건물 앞 노상 주차가 가능하며, 자리가 없을 때를 대비해 인근 공영주차장을 안내해 드립니다.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 방문 -->
+  <section class="sec" id="visit" style="background:var(--paper-2);border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="lab">Visit</span>
+        <h2>예약 및 오시는 길</h2>
+        <p>예약은 인스타그램 DM 또는 전화로 받고 있습니다. 원하시는 날짜와 시간대를 함께 남겨 주시면 빠르게 안내해 드립니다.</p>
+      </div>
+      <div class="visit">
+        <div>
+          <dl>
+            <div class="info-row"><dt>Address</dt><dd>서울시 ○○구 ○○로 00, 3층<small>지하철 ○○역 0번 출구 도보 5분</small></dd></div>
+            <div class="info-row"><dt>Hours</dt><dd>매일 11:00 – 20:00<small>마지막 예약 18:00 · 매주 일요일 휴무</small></dd></div>
+            <div class="info-row"><dt>Tel</dt><dd><a href="tel:01000000000">010-0000-0000</a><small>시술 중에는 전화를 받기 어려워 DM이 빠릅니다</small></dd></div>
+            <div class="info-row"><dt>Parking</dt><dd>건물 앞 노상 주차 가능<small>만차 시 인근 공영주차장 안내</small></dd></div>
+          </dl>
+        </div>
+        <div>
+          <div class="ch">
+            <a href="https://www.instagram.com/eunasoo_nail/" target="_blank" rel="noopener"><b>인스타그램 DM으로 예약</b><span>@eunasoo_nail</span></a>
+            <a href="tel:01000000000"><b>전화로 문의하기</b><span>Tel</span></a>
+            <a href="https://map.naver.com/" target="_blank" rel="noopener"><b>네이버 지도로 길찾기</b><span>Map</span></a>
+            <a href="https://www.instagram.com/eunasoo_nail/" target="_blank" rel="noopener"><b>최근 작업 더 보기</b><span>Instagram</span></a>
+          </div>
+          <p class="mnote">예약 문의 시 ① 원하는 날짜·시간 ② 시술 종류 ③ 참고 이미지를 함께 보내 주시면 한 번에 안내해 드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">
+      <img src="logo-mark-light.png" alt="" width="38">
+      <b>으나수 네일</b>
+    </div>
+    <p>손톱의 상태를 먼저 보고, 디자인은 그 다음입니다.<br>예약제 1인 프라이빗 네일 스튜디오.</p>
+    <div class="fl">
+      <a href="https://www.instagram.com/eunasoo_nail/" target="_blank" rel="noopener">Instagram</a>
+      <a href="tel:01000000000">Tel</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <p class="cr">© 2026 으나수 네일 (eunasoo nail). All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="quick">
+  <a href="tel:01000000000">전화 문의</a>
+  <a href="https://www.instagram.com/eunasoo_nail/" target="_blank" rel="noopener">DM 예약</a>
+</div>
+
+<script>
+(function(){
+  // 데스크톱에서만 스크롤 리빌 (모바일·인앱 웹뷰는 항상 보이게)
+  try{
+    if(window.matchMedia('(min-width:900px)').matches && 'IntersectionObserver' in window){
+      var els=document.querySelectorAll('.rv-on');
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      },{threshold:.12});
+      els.forEach(function(el){ io.observe(el); });
+      // 폴백: 3초 뒤에도 안 뜬 요소는 강제 표시
+      setTimeout(function(){ els.forEach(function(el){ el.classList.add('in'); }); },3000);
+    } else {
+      document.querySelectorAll('.rv-on').forEach(function(el){ el.classList.add('in'); });
+    }
+  }catch(e){
+    document.querySelectorAll('.rv-on').forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
