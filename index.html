@@ -175,7 +175,8 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
   :root{--bar:66px}
   .topnav{display:flex}
   .hero{grid-template-columns:minmax(0,46fr) minmax(0,54fr);min-height:100vh;min-height:100svh}
-  .hero-img{aspect-ratio:auto;height:100%}
+  .hero-img{aspect-ratio:auto;height:auto;position:relative}
+  .hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .marks .wrap{grid-template-columns:repeat(3,1fr);gap:44px}
   .mark{border-bottom:0;padding:34px 0}
   .about{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
