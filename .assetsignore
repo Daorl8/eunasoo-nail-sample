@@ -1,2 +1,10 @@
 .git
-.git/**
+.gitignore
+.assetsignore
+.wrangler
+wrangler.toml
+node_modules
+.DS_Store
+README.md
+STRUCTURE.md
+CHANGELOG.md
