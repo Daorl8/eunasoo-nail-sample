@@ -14,7 +14,8 @@
 <link rel="icon" href="logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 :root{
@@ -266,6 +267,9 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
 }
 @media (prefers-reduced-motion:reduce){
   .rv-on{opacity:1!important;transform:none!important}
+  /* 인트로 무한 장식 모션 정지 (전정장애 배려) — 인트로 클래스는 JS에서 스킵 */
+  .hero-logo,.hero-spark{animation:none!important}
+  .hero-txt > *{opacity:1!important;transform:none!important}
   /* 갤러리 호버 확대는 장식 모션이라 동작 줄이기여도 유지(끊김 방지) */
 }
 </style>
@@ -662,6 +666,8 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
 (function(){
   var ht = document.querySelector('.hero-txt');
   if(!ht) return;
+  // 동작 줄이기 사용자는 인트로 스킵 (클래스 없으면 콘텐츠 그대로 노출)
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   var done = false;
   function play(){ if(done) return; done = true; ht.classList.add('intro'); }
   if(document.visibilityState === 'visible'){
@@ -675,7 +681,7 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
 
 // 부드러운 앵커 스크롤 (동작 줄이기여도 rAF로 강제 실행 — CSS smooth는 reduced-motion서 무시됨)
 (function(){
-  var bar = 66;
+  function bar(){ return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--bar'),10) || 56; }
   function easeInOutQuad(p){ return p<.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2; }
   function smoothTo(targetY, dur){
     var startY = window.pageYOffset, dist = targetY-startY, start=null, done=false;
@@ -695,7 +701,7 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
       var t = document.querySelector(id);
       if(!t) return;
       e.preventDefault();
-      var offset = (id==='#top') ? 0 : bar;
+      var offset = (id==='#top') ? 0 : bar();
       var y = t.getBoundingClientRect().top + window.pageYOffset - offset;
       smoothTo(Math.max(0,y), 620);
       if(history.pushState) history.pushState(null,'',id);
