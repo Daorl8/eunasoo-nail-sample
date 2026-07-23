@@ -267,9 +267,7 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
 }
 @media (prefers-reduced-motion:reduce){
   .rv-on{opacity:1!important;transform:none!important}
-  /* 인트로 무한 장식 모션 정지 (전정장애 배려) — 인트로 클래스는 JS에서 스킵 */
-  .hero-logo,.hero-spark{animation:none!important}
-  .hero-txt > *{opacity:1!important;transform:none!important}
+  /* 히어로 인트로/장식 모션은 동작 줄이기여도 강제 재생 (다올 결정 · 프로젝트 방침) */
   /* 갤러리 호버 확대는 장식 모션이라 동작 줄이기여도 유지(끊김 방지) */
 }
 </style>
@@ -666,8 +664,6 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
 (function(){
   var ht = document.querySelector('.hero-txt');
   if(!ht) return;
-  // 동작 줄이기 사용자는 인트로 스킵 (클래스 없으면 콘텐츠 그대로 노출)
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   var done = false;
   function play(){ if(done) return; done = true; ht.classList.add('intro'); }
   if(document.visibilityState === 'visible'){
