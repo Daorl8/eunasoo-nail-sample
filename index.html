@@ -71,15 +71,14 @@ p{color:var(--ink-2)}
 .hero-logo-wrap{position:relative;display:inline-block;margin-bottom:20px}
 .hero-logo{width:clamp(104px,17vw,128px);display:block}
 
-/* 로드 인트로 애니메이션 (로고 컨셉: 떠오르는 행성 + 반짝이는 별) — 동작 줄이기여도 유지되는 장식 모션 */
-.hero-txt > *{opacity:0;animation:heroRise .85s cubic-bezier(.22,.61,.36,1) both}
-.hero-txt > .hero-logo-wrap{animation:heroLogoPop 1s cubic-bezier(.34,1.2,.5,1) both}
-.hero-txt > .hero-logo-wrap{animation-delay:.05s}
-.hero-txt > .lab{animation-delay:.32s}
-.hero-txt > h1{animation-delay:.46s}
-.hero-txt > .hero-sub{animation-delay:.66s}
-.hero-txt > .hero-cta{animation-delay:.82s}
-.hero-txt > .hero-note{animation-delay:.98s}
+/* 로드 인트로 애니메이션 (로고 컨셉: 떠오르는 행성 + 반짝이는 별) — .intro 클래스 있을 때만(폴백: 없으면 그냥 보임) */
+.hero-txt.intro > *{opacity:0;animation:heroRise .85s cubic-bezier(.22,.61,.36,1) both}
+.hero-txt.intro > .hero-logo-wrap{animation:heroLogoPop 1s cubic-bezier(.34,1.2,.5,1) both;animation-delay:.05s}
+.hero-txt.intro > .lab{animation-delay:.32s}
+.hero-txt.intro > h1{animation-delay:.46s}
+.hero-txt.intro > .hero-sub{animation-delay:.66s}
+.hero-txt.intro > .hero-cta{animation-delay:.82s}
+.hero-txt.intro > .hero-note{animation-delay:.98s}
 @keyframes heroRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes heroLogoPop{0%{opacity:0;transform:scale(.86) translateY(8px)}60%{opacity:1}100%{opacity:1;transform:scale(1) translateY(0)}}
 /* 로고 등장 후 은은하게 부유 (행성 느낌) */
@@ -626,6 +625,21 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
     }
   }catch(e){
     document.querySelectorAll('.rv-on').forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+
+// 히어로 로드 인트로 (foreground일 때만 재생 · background/JS없음이면 그냥 보임)
+(function(){
+  var ht = document.querySelector('.hero-txt');
+  if(!ht) return;
+  var done = false;
+  function play(){ if(done) return; done = true; ht.classList.add('intro'); }
+  if(document.visibilityState === 'visible'){
+    requestAnimationFrame(function(){ requestAnimationFrame(play); });
+  } else {
+    document.addEventListener('visibilitychange', function h(){
+      if(document.visibilityState === 'visible'){ play(); document.removeEventListener('visibilitychange', h); }
+    });
   }
 })();
 
