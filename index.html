@@ -68,7 +68,33 @@ p{color:var(--ink-2)}
 /* 히어로 */
 .hero{display:grid;grid-template-columns:1fr;padding-top:var(--bar)}
 .hero-txt{padding:clamp(40px,6vw,60px) var(--pad) clamp(40px,6vw,56px);display:flex;flex-direction:column;justify-content:center}
-.hero-logo{width:clamp(104px,17vw,128px);margin-bottom:20px}
+.hero-logo-wrap{position:relative;display:inline-block;margin-bottom:20px}
+.hero-logo{width:clamp(104px,17vw,128px);display:block}
+
+/* 로드 인트로 애니메이션 (로고 컨셉: 떠오르는 행성 + 반짝이는 별) — 동작 줄이기여도 유지되는 장식 모션 */
+.hero-txt > *{opacity:0;animation:heroRise .85s cubic-bezier(.22,.61,.36,1) both}
+.hero-txt > .hero-logo-wrap{animation:heroLogoPop 1s cubic-bezier(.34,1.2,.5,1) both}
+.hero-txt > .hero-logo-wrap{animation-delay:.05s}
+.hero-txt > .lab{animation-delay:.32s}
+.hero-txt > h1{animation-delay:.46s}
+.hero-txt > .hero-sub{animation-delay:.66s}
+.hero-txt > .hero-cta{animation-delay:.82s}
+.hero-txt > .hero-note{animation-delay:.98s}
+@keyframes heroRise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes heroLogoPop{0%{opacity:0;transform:scale(.86) translateY(8px)}60%{opacity:1}100%{opacity:1;transform:scale(1) translateY(0)}}
+/* 로고 등장 후 은은하게 부유 (행성 느낌) */
+.hero-logo{animation:heroFloat 6s ease-in-out 1.15s infinite}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+/* 로고 옆 반짝이는 별 (로고의 sparkle 모티브) */
+.hero-spark{position:absolute;pointer-events:none;background:
+  radial-gradient(circle,#fff 0,rgba(185,143,214,.9) 30%,transparent 62%);border-radius:50%;opacity:0}
+.hero-spark::before,.hero-spark::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(var(--a,0deg),transparent 42%,#B98FD6 50%,transparent 58%)}
+.hero-spark::after{--a:90deg}
+.hero-spark.s1{width:14px;height:14px;top:6%;left:-3%;animation:sparkTwinkle 3.4s ease-in-out 1.4s infinite}
+.hero-spark.s2{width:9px;height:9px;top:30%;right:-6%;animation:sparkTwinkle 3.4s ease-in-out 2.6s infinite}
+@keyframes sparkTwinkle{0%,100%{opacity:0;transform:scale(.5) rotate(0deg)}
+  45%{opacity:.9;transform:scale(1) rotate(35deg)}55%{opacity:1;transform:scale(1.05) rotate(45deg)}}
 .hero h1{font-family:var(--kr-disp);font-size:clamp(1.95rem,5.4vw,2.75rem);font-weight:500;letter-spacing:-.01em;line-height:1.42;margin:14px 0 16px;text-wrap:balance}
 .hero h1 em{font-style:normal;color:var(--plum)}
 .hero-sub{color:var(--muted);font-size:clamp(.96rem,1.6vw,1.05rem);max-width:30em}
@@ -324,7 +350,7 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
   <!-- 히어로 -->
   <section class="hero">
     <div class="hero-txt">
-      <img class="hero-logo" src="logo.png" alt="으나수 네일 eunasoo nail 로고">
+      <span class="hero-logo-wrap"><img class="hero-logo" src="logo.png" alt="으나수 네일 eunasoo nail 로고"><span class="hero-spark s1" aria-hidden="true"></span><span class="hero-spark s2" aria-hidden="true"></span></span>
       <span class="lab">Private nail studio</span>
       <h1>예쁜 디자인도,<br><em>오래 유지</em>되어야 하니까요.</h1>
       <p class="hero-sub">창원 중동에서 8년째 운영하고 있는 작은 네일샵이에요. 한 분씩만 예약을 받아, 서두르지 않고 꼼꼼하게 시술해드립니다.</p>
