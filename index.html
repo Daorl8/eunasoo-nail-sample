@@ -29,7 +29,7 @@
   --bar:56px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{color-scheme:light;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html{color-scheme:light;-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:var(--bar)}
 body{background:var(--paper);color:var(--ink);font-family:var(--kr);font-weight:400;line-height:1.7;
   word-break:keep-all;overflow-wrap:break-word;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
@@ -262,7 +262,7 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
 
 /* 데스크톱 전용 리빌 — 모바일/인앱 웹뷰는 항상 보이게 */
 @media (min-width:900px){
-  .rv-on{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+  .rv-on{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,.61,.36,1)}
   .rv-on.in{opacity:1;transform:none}
 }
 @media (prefers-reduced-motion:reduce){
@@ -527,7 +527,7 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
       <div class="rv-grid">
         <div class="rv-card">
           <div class="rv-stars" aria-label="별점 5점">★★★★★</div>
-          <p class="rv-body">"결정장애인 제가 원하는 네일을 찰떡같이 잘 해주세요. 쉐입부터 유지력까지 최고인 샵이에요. 쉐입, 디자인, 유지력 모두 원하시면 으나수네일로 가보세요."</p>
+          <p class="rv-body">"결정을 잘 못하는 저도 원하는 네일을 찰떡같이 잘 해주세요. 쉐입부터 유지력까지 최고인 샵이에요. 쉐입, 디자인, 유지력 모두 원하시면 으나수네일로 가보세요."</p>
           <div class="rv-tags"><span>원하는 디자인</span><span>유지력이 좋아요</span><span>아트가 멋져요</span></div>
           <p class="rv-who"><b>m***</b> 님 · 회원권 고객</p>
         </div>
@@ -648,10 +648,10 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
       var els=document.querySelectorAll('.rv-on');
       var io=new IntersectionObserver(function(es){
         es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-      },{threshold:.12});
+      },{threshold:.08,rootMargin:'0px 0px -6% 0px'});
       els.forEach(function(el){ io.observe(el); });
-      // 폴백: 3초 뒤에도 안 뜬 요소는 강제 표시
-      setTimeout(function(){ els.forEach(function(el){ el.classList.add('in'); }); },3000);
+      // 폴백: 안 뜬 요소는 1.5초 뒤 강제 표시 (빈 화면 시간 최소화)
+      setTimeout(function(){ els.forEach(function(el){ el.classList.add('in'); }); },1500);
     } else {
       document.querySelectorAll('.rv-on').forEach(function(el){ el.classList.add('in'); });
     }
@@ -697,6 +697,8 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
       var t = document.querySelector(id);
       if(!t) return;
       e.preventDefault();
+      // 앵커로 이동하는 방문자는 콘텐츠 우선 — 리빌 대기 없이 즉시 표시
+      document.querySelectorAll('.rv-on').forEach(function(el){ el.classList.add('in'); });
       var offset = (id==='#top') ? 0 : bar();
       var y = t.getBoundingClientRect().top + window.pageYOffset - offset;
       smoothTo(Math.max(0,y), 620);
