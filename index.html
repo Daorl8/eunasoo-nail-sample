@@ -101,7 +101,7 @@ p{color:var(--ink-2)}
 .mrow{display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:baseline;
   padding:20px 0;border-bottom:1px solid var(--line);min-width:0}
 .mrow .nm{font-weight:600;letter-spacing:-.01em}
-.mrow .ds{grid-column:1/-1;color:var(--muted);font-size:.9rem;margin-top:-6px}
+.mrow .ds{grid-column:1;color:var(--muted);font-size:.9rem;margin-top:-6px;padding-right:12px}
 .mrow .pr{font-family:var(--en);font-size:1rem;color:var(--ink);white-space:nowrap}
 .mnote{margin-top:18px;font-size:.88rem;color:var(--muted)}
 
@@ -118,6 +118,7 @@ p{color:var(--ink-2)}
   .gcell:hover img{transform:scale(1.06) translateZ(0)}
   .gcell:hover::after{opacity:1}
 }
+.works-more{display:flex;justify-content:center;margin-top:clamp(28px,4vw,44px)}
 
 /* 아카이브 밴드 */
 .band{position:relative;background:var(--ink);color:var(--paper);overflow:hidden}
@@ -153,6 +154,7 @@ p{color:var(--ink-2)}
 .pol h3{margin-bottom:8px}
 .pol p{font-size:.94rem;color:var(--muted)}
 .pol .hl{color:var(--plum);font-weight:600}
+.pol-extra{margin-top:clamp(34px,5vw,52px);padding-top:clamp(22px,3vw,30px);border-top:1px solid var(--line)}
 
 /* FAQ */
 details{border-bottom:1px solid var(--line)}
@@ -204,7 +206,10 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
 
 @media (min-width:900px){
   :root{--bar:66px}
-  .topnav{display:flex}
+  .top .wrap{display:grid;grid-template-columns:1fr auto 1fr}
+  .brand{justify-self:start}
+  .topnav{display:flex;justify-self:center}
+  .top .wrap > .btn{justify-self:end}
   .hero{grid-template-columns:minmax(0,46fr) minmax(0,54fr);min-height:100vh;min-height:100svh}
   .hero-img{aspect-ratio:auto;height:auto;position:relative}
   .hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -423,6 +428,9 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
         <div class="gcell"><img src="work-11.jpg" alt="차분한 톤의 프렌치 라인 네일" loading="lazy"></div>
         <div class="gcell"><img src="work-12.jpg" alt="화이트 플라워 포인트 젤네일" loading="lazy"></div>
       </div>
+      <div class="works-more">
+        <a class="btn btn-o" href="https://www.instagram.com/eunasoo_nail/" target="_blank" rel="noopener">인스타그램에서 작업 더 보기</a>
+      </div>
     </div>
   </section>
 
@@ -466,19 +474,19 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
           <div class="rv-stars" aria-label="별점 5점">★★★★★</div>
           <p class="rv-body">"결정장애인 제가 원하는 네일을 찰떡같이 잘 해주세요. 쉐입부터 유지력까지 최고인 샵이에요. 쉐입, 디자인, 유지력 모두 원하시면 으나수네일로 가보세요."</p>
           <div class="rv-tags"><span>원하는 디자인</span><span>유지력이 좋아요</span><span>아트가 멋져요</span></div>
-          <p class="rv-who"><b>minngki</b> 님 · 회원권 고객</p>
+          <p class="rv-who"><b>m***</b> 님 · 회원권 고객</p>
         </div>
         <div class="rv-card">
           <div class="rv-stars" aria-label="별점 5점">★★★★★</div>
           <p class="rv-body">"으나수네일 다닌 지 벌써 네 번째예요. 손도 짱 빠르시고 쉐입 잡는 게 예술입니다. 제 추구미 스타일을 항상 잘 잡아 주세요."</p>
           <div class="rv-tags"><span>원하는 디자인</span><span>시술이 꼼꼼해요</span><span>손이 빨라요</span></div>
-          <p class="rv-who"><b>yj0825</b> 님</p>
+          <p class="rv-who"><b>y***</b> 님</p>
         </div>
         <div class="rv-card">
           <div class="rv-stars" aria-label="별점 5점">★★★★★</div>
           <p class="rv-body">"원컬러 하려다 귀여운 아트 보자마자 반했어요. 오랜만에 방문해도 어제 온 것 같은 편안함이 있고요. 으나수 원장님 실력은 말할 것도 없어요."</p>
           <div class="rv-tags"><span>디자인이 다양해요</span><span>유지력이 좋아요</span><span>시술이 꼼꼼해요</span></div>
-          <p class="rv-who"><b>설기언니</b> 님</p>
+          <p class="rv-who"><b>설***</b> 님</p>
         </div>
       </div>
       <p class="rv-more"><a href="https://m.place.naver.com/nailshop/1265687818/review/visitor" target="_blank" rel="noopener">네이버 방문자 리뷰 186개 모두 보기 →</a></p>
@@ -497,7 +505,7 @@ footer .cr{border-top:1px solid #332C38;padding-top:20px;font-size:.78rem;color:
         <div class="pol"><h3>변경 · 취소</h3><p><span class="hl">2일 전</span>까지는 전액, <span class="hl">하루 전</span>엔 절반 돌려드려요. 당일이나 직전 취소, 노쇼는 돌려드리기 어려워요.</p></div>
         <div class="pol"><h3>지각</h3><p>연락 없이 <span class="hl">15분</span> 지나면 자동으로 취소돼요. 늦으실 것 같으면 미리 한 번만 알려주세요.</p></div>
       </div>
-      <p class="mnote">· 가져오실 디자인은 <b>방문 전에 네이버 톡톡이나 카카오톡으로 미리</b> 보내주세요. 당일에 보여주시면 재료가 없을 수도 있어요. · 예약 상황에 따라 시간이 30분 전후로 바뀔 수 있는데, 그럴 땐 미리 전화드려요. 꼭 받아주세요. · 건물 입구에 지붕이 없어서, 비 오는 날엔 우산 챙겨 오시면 좋아요.</p>
+      <p class="mnote pol-extra">· 가져오실 디자인은 <b>방문 전에 네이버 톡톡이나 카카오톡으로 미리</b> 보내주세요. 당일에 보여주시면 재료가 없을 수도 있어요. · 예약 상황에 따라 시간이 30분 전후로 바뀔 수 있는데, 그럴 땐 미리 전화드려요. 꼭 받아주세요. · 건물 입구에 지붕이 없어서, 비 오는 날엔 우산 챙겨 오시면 좋아요.</p>
     </div>
   </section>
 
